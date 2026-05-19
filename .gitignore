@@ -1,0 +1,5 @@
+.codio/
+.guides/
+.settings
+__pycache__/
+*.pyc
