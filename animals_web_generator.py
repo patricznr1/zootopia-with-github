@@ -9,7 +9,7 @@ import json
 
 def load_data(file_path):
     """Loads a JSON file and returns the parsed content."""
-    with open(file_path, "r") as handle:
+    with open(file_path, "r", encoding="utf-8") as handle:
         return json.load(handle)
 
 
@@ -37,7 +37,7 @@ def serialize_animal(animal):
 def main():
     animals = load_data("animals_data.json")
 
-    with open("animals_template.html", "r") as handle:
+    with open("animals_template.html", "r", encoding="utf-8") as handle:
         template = handle.read()
 
     cards = ""
@@ -46,7 +46,7 @@ def main():
 
     final_html = template.replace("__REPLACE_ANIMALS_INFO__", cards)
 
-    with open("animals.html", "w") as handle:
+    with open("animals.html", "w", encoding="utf-8") as handle:
         handle.write(final_html)
 
     print("animals.html generated with " + str(len(animals)) + " animals.")
